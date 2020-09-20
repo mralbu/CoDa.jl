@@ -42,7 +42,7 @@ struct Composition{D,SYMS}
 end
 
 Composition(parts::NamedTuple) =
-  Composition{length(parts),keys(parts)}(Tuple(parts))
+  Composition{length(parts),keys(parts)}(𝓒(map(x -> x == 0. ? x + eps() : x, Tuple(parts))))
 
 Composition(syms::NTuple{D,Symbol}, parts::NTuple{D,<:Real}) where {D} =
   Composition(NamedTuple{syms}(parts))

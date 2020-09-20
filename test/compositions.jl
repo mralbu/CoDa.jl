@@ -16,8 +16,8 @@
   @test names(2c) == names(c)
 
   # get part by name
-  c = Composition(a=3,b=2,c=1)
-  @test c.a == 3
-  @test c.b == 2
-  @test c.c == 1
+  c = Composition(a=2,b=3,c=3)
+  @test c.a == 0.25
+  @test c.b == 0.375
+  @test c.c == 0.375
 end

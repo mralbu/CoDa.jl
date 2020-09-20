@@ -41,7 +41,7 @@ clrinv(x) = Composition(𝓒(exp.(x)))
 Isometric log-ratio transformation of composition `c`.
 """
 function ilr(c::Composition{D,SYMS}) where {D,SYMS}
-  log_parts = log.(c.parts .+ eps())
+  log_parts = log.(c.parts)
   x = @MVector zeros(D-1)
   for i in 1:D-1
     s = 0.
